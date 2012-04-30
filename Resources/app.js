@@ -47,25 +47,21 @@ function createApplicationWindow() {
 	var win = mcps.ui.createBaseWindow('Main Window');
 	
 	var park_button = Ti.UI.createButton({
-		image:'parksbutton.png',
+		image:'./images/ParksBtn.png',
 		top: 100,
 		left: 20
 	});
 	
-	var event_button = Ti.UI.createLabel({
-		text: 'Events',
-		font:{fontSize:28}, // you can add fontFace etc
-		textAlign:'center',
-		color:'#0C0', // color of the text
-		backgroundColor:'#029',
-		borderColor: '#0A0',
-		borderRadius: 10, // adjusts how rounded corners are, 0 is flat
-		borderWidth: 1,
-		opacity: 0.6, // sets transparency, 0.0 is transparent, 1.0 is opaque
-		height: 50,
-		width: 201,
+	var event_button = Ti.UI.createButton({
+		image:'./images/EventsBtn.png',
 		top: 160,
 		left: 20
+	});
+	
+	var activity_button = Ti.UI.createButton({
+		image:'./images/ActivitiesBtn.png',
+		top:220,
+		left:20
 	});
 	
 	/* Event Listeners */
