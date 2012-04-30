@@ -16,40 +16,8 @@ exports.createBaseWindow = function(winTitle) {
 	});
 	var searchBar = createSearchBar();
 	
-	//create the buttons for the UI
-	var parksBtn = Ti.UI.createImageView({
-		image:'./images/ParksBtn.png',
-		top:20
-	});
-	
-	var eventsBtn = Ti.UI.createImageView({
-		image:'./images/EventsBtn.png',
-		top:25
-	});
-	
-	var activitiesBtn = Ti.UI.createImageView({
-		image:'./images/ActivitiesBtn.png',
-		top:30
-	});
-	
-	//add event listeners for touch events
-	parksBtn.addEventListener('click', function(e){
-		alert(this + ' was clicked');
-	});
-	
-	eventsBtn.addEventListener('click', function(e){
-		alert(this + ' was clicked');
-	});
-	
-	activitiesBtn.addEventListener('click', function(e){
-		alert(this + ' was clicked');
-	});
-	
 	//win.add(logo);
 	win.add(searchBar);
-	win.add(parksBtn);
-	win.add(eventsBtn);
-	win.add(activitiesBtn);
 	
 	return win;
 }
