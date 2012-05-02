@@ -4,10 +4,11 @@ exports.createBaseWindow = function(winTitle) {
 		title: winTitle,
 		backgroundImage:'./images/bg.png',
 		fullscreen: false, // needed to force heavyweight window (back button) [droid]
-		exitOnClose: true
+		exitOnClose: true,
+		navBarHidden:true
 	});
 	
-	
+
 	var logo = Ti.UI.createImageView({
 		image:'./images/mcps_trans.png',
 		bottom:10,
@@ -17,7 +18,7 @@ exports.createBaseWindow = function(winTitle) {
 	var searchBar = createSearchBar();
 	
 	//win.add(logo);
-	win.add(searchBar);
+//	win.add(searchBar);
 	
 	return win;
 }
@@ -79,9 +80,9 @@ function createSearchBar() {
 	
 	
 	
-	searchBar.add(searchButton);
+	searchBar.add(searchButton); 
 	searchBar.add(searchType);
-	searchBar.add(search);
+	searchBar.add(search); 
 	
-	return searchBar;
+	return searchBar; 
 }
