@@ -13,6 +13,8 @@ exports.createParkDetailsWindow = function(link, description, title) {
 		font:{fontSize:24}
 	});
 	
+	var image = Ti.UI.createWebView({url:link});
+	
 	var button = Ti.UI.createLabel({
 		text: 'View Map',
 		top: '35%',
@@ -25,7 +27,7 @@ exports.createParkDetailsWindow = function(link, description, title) {
 	
 	button.addEventListener('click', function(e){
 		var win1 = Ti.UI.createWindow({title:'Park Map'});
-		win.add(image);
+		win1.add(image);
 		win1.open()
 	});
 	
