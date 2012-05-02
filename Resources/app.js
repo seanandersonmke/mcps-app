@@ -49,13 +49,19 @@ function createApplicationWindow() {
 	var park_button = Ti.UI.createButton({
 		image:'./images/ParksBtn.png',
 		top: 140,
-		left:8
+		left:8,
+		top: '20%',
+		left: 20
+
 	});
 	
 	var event_button = Ti.UI.createButton({
 		image:'./images/EventsBtn.png',
 		top: 298,
-		left:8
+		left:8,
+		top: '40%',
+		left: 20
+
 	});
 	
 	var activity_button = Ti.UI.createButton({

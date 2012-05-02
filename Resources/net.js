@@ -68,17 +68,36 @@ exports.getEventData = function(e, numdays) {
 				var evnt = json[i];
 				var row = Ti.UI.createTableViewRow({
 					height:'60dp',
-					pDesc:evnt.description,
-					pLocation:evnt.location,
-					pDetails:evnt.moredetail,
-					pTime:evnt.time
+					eDesc:evnt.description,
+					eLocation:evnt.location,
+					eDetails:evnt.moredetail,
+					eTime:evnt.time
 				});
 				var title = Ti.UI.createLabel({
 					text: evnt.description,
-					color: '#FFF'
+					color: '#FFF',
+					left: 0
 				});
 				
+				var dt = evnt.time.split(' ');
+				var d = dt[0].split('/');
+				var t = dt[1].split(':');
+				
+				var date = d[0] + "/" + d[1];
+				var time = t[0] + ":" + t[1] + " " + dt[2];
+				
+				var dtf = date + "\n" + time;
+				
+				var datetime = Ti.UI.createLabel({
+					text: dtf,
+					color: '#FFF',
+					right: 0,
+					font: {fontSize: 12}
+				});
+				
+				
 				row.add(title);
+				row.add(datetime);
 				tableData.push(row);
 			} //end for loop
 			
@@ -90,9 +109,19 @@ exports.getEventData = function(e, numdays) {
 		},
 		timeout: 5000		
 	});
-	alert(url);
 	xhr.open("GET", url)
 	xhr.send();
-	
+
+	table.addEventListener('click', function(e) {
+		if(e.rowData) {
+			var edesc = e.rowData.eDesc;
+			var eloc = e.rowData.eLocation;
+			var edetail = e.rowData.eDetails;
+			var etime = e.rowData.eTime;
+			var win = mcps.details.createEventDetailsWindow(edesc, eloc, edetail, etime);
+			win.open();
+		}
+	});
+		
 	return table;
 }
