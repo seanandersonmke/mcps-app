@@ -4,7 +4,8 @@ exports.createBaseWindow = function(winTitle) {
 		title: winTitle,
 		backgroundImage:'./images/bg.png',
 		fullscreen: false, // needed to force heavyweight window (back button) [droid]
-		exitOnClose: true
+		exitOnClose: true,
+		navBarHidden: true
 	});
 	
 	
@@ -15,7 +16,7 @@ exports.createBaseWindow = function(winTitle) {
 	var searchBar = createSearchBar();
 	
 	win.add(logo);
-	win.add(searchBar);
+	//win.add(searchBar);
 	
 	return win;
 }
