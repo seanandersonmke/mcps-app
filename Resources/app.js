@@ -17,9 +17,10 @@ function createParkWindow() {
 	
 	// parks_table.set[BackgroundColor, HeaderTitle, Height, Opacity, ]
 	parks_table.setHeaderTitle('Park Information');
-	parks_table.setHeight(150);
-	parks_table.setTop(80);
-	parks_table.setOpacity(0.6);	
+	parks_table.setHeight('60%');
+	parks_table.setTop('15%');
+	parks_table.setBackgroundColor('#040');
+	parks_table.setOpacity(0.5);
 	
 	win.add(parks_table);
 	
@@ -32,11 +33,11 @@ function createEventWindow() {
 	var events_table = mcps.net.getEventData();
 	
 	events_table.setHeaderTitle('Event Info');
-	events_table.setHeight(150);
-	events_table.setTop(80);
-	events_table.setOpacity(0.6);
+	events_table.setHeight('60%');
+	events_table.setTop('15%');
+	events_table.setBackgroundColor('#040');
+	events_table.setOpacity(0.5);
 	
-	var optview = 
 	win.add(events_table);
 	
 	return win;
@@ -48,13 +49,13 @@ function createApplicationWindow() {
 	
 	var park_button = Ti.UI.createButton({
 		image:'./images/ParksBtn.png',
-		top: 100,
+		top: '20%',
 		left: 20
 	});
 	
 	var event_button = Ti.UI.createButton({
 		image:'./images/EventsBtn.png',
-		top: 160,
+		top: '40%',
 		left: 20
 	});
 	

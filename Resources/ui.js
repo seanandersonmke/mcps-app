@@ -10,13 +10,11 @@ exports.createBaseWindow = function(winTitle) {
 	
 	var logo = Ti.UI.createImageView({
 		image:'./images/mcps_trans.png',
-		bottom:10,
-		height:65,
-		width:158,
+		bottom:'5%',
 	});
 	var searchBar = createSearchBar();
 	
-	//win.add(logo);
+	win.add(logo);
 	win.add(searchBar);
 	
 	return win;
@@ -29,7 +27,7 @@ function createSearchBar() {
 		backgroundColor:'gray',
 		width:'100%',
 		height:65,
-		top:0
+		bottom:0
 	});
 	
 	//Actual search bar
