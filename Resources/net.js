@@ -1,6 +1,7 @@
 var mcps = {};
 mcps.details = require('details');
 
+/* Start Parks/Events detail windows */
 exports.getParkData = function(e) {
 	var url = "http://api.milwaukeecounty.org/MobileAPI.svc/RSSInfo/parks";
 	var tableData = [];
@@ -46,6 +47,7 @@ exports.getParkData = function(e) {
 			var pdesc = e.rowData.pDesc;
 			var ptitle = e.rowData.pTitle;
 			var win = mcps.details.createParkDetailsWindow(plink, pdesc, ptitle);
+
 			win.open();
 		}
 	});
