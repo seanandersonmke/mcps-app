@@ -87,11 +87,8 @@ function createApplicationWindow() {
 	/* Add everything to the window */
 	win.add(park_button);
 	win.add(event_button);
-<<<<<<< HEAD
+	win.add(activity_button);
 	win.add(fb);
 	
-=======
-	win.add(activity_button);
->>>>>>> 854f28ae85fe69f284be750ffef5ee008cfb51c0
 	return win;
 }
