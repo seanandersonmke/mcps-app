@@ -76,9 +76,7 @@ function createSearchBar() {
 		search.setHintText('Locating nearest park...');
 		search.setValue('Locating nearest park...');
 
-	});
-	
-	
+	});	
 	
 	searchBar.add(searchButton); 
 	searchBar.add(searchType);

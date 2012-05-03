@@ -4,7 +4,8 @@ var mcps = {}; // project namespace
 
 mcps.ui = require('ui'); // import ui namespace
 mcps.net = require('net');
-mcps.details = require('details');
+//mcps.details = require('details');
+mcps.fb = require('fb');
 
 var win = createApplicationWindow();
 win.open();
@@ -81,10 +82,13 @@ function createApplicationWindow() {
 		event_window.open();
 	});
 	
+	var fb = mcps.fb.createFaceBookButton();
 	
 	/* Add everything to the window */
 	win.add(park_button);
 	win.add(event_button);
 	win.add(activity_button);
+	win.add(fb);
+	
 	return win;
 }

@@ -1,5 +1,7 @@
 var mcps = {};
 mcps.ui = require('ui');
+mcps.fb = require('fb');
+
 
 exports.createParkDetailsWindow = function(link, description, title) {
 	
@@ -44,7 +46,7 @@ exports.createParkDetailsWindow = function(link, description, title) {
 	win.add(label);
 	win.add(button);
 	win.add(desc);
-	
+
 	return win;
 }
 
