@@ -18,7 +18,7 @@ exports.createBaseWindow = function(winTitle) {
 	var searchBar = createSearchBar();
 	
 	//win.add(logo);
-//	win.add(searchBar);
+	//win.add(searchBar);
 	
 	return win;
 }
