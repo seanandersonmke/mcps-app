@@ -20,7 +20,6 @@ exports.createBaseWindow = function(winTitle) {
 	
 	win.add(logo);
 //	win.add(searchBar);
-	
 	return win;
 }
 

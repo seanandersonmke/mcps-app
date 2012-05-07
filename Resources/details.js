@@ -6,7 +6,7 @@ mcps.fb = require('fb');
 exports.createParkDetailsWindow = function(link, description, title) {
 	
 	var wintitle = "" + title + " Details";
-	var win = mcps.ui.createBaseWindow(wintitle);
+	var win = mcps.ui.createBaseWindow();
 	
 	var label = Ti.UI.createLabel({
 		text: wintitle,
@@ -15,7 +15,24 @@ exports.createParkDetailsWindow = function(link, description, title) {
 		font:{fontSize:24}
 	});
 	
-	var image = Ti.UI.createWebView({url:link});
+/* This whole section will be for the map annotation on the details screen once you click 'View Map'
+*	var parksView = Ti.Map.createAnnotation({
+*		this function gets populated with the matching data from the park
+*		located at http://api.milwaukeecounty.org/MobileAPI.svc/ParksInfo
+*		not sure how to link each park to the feed from the details window
+*		e.g., I'm already in the details window for park XYZ, go find that 
+*		info from the feed and pull just that and nothing else.
+*	});
+*/
+	var map = Ti.Map.createView({
+		mapType: Titanium.Map.STANDARD_TYPE,
+		region: {latitude:43.04882, longitude:-87.907104,
+				 latitudeDelta:0.01, longitudeDelta:0.01},
+		regionFit:true,
+		animate:true,
+		userLocation:true,
+		// annotations:[parksView]
+	});
 	
 	var button = Ti.UI.createLabel({
 		text: 'View Map',

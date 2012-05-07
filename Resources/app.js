@@ -15,12 +15,11 @@ function createParkWindow() {
 	/* Creates the top-level park window */
 	var win = mcps.ui.createBaseWindow('Park Info');
 	var parks_table = mcps.net.getParkData();
-	
-	// parks_table.set[BackgroundColor, HeaderTitle, Height, Opacity, ]
-	parks_table.setHeaderTitle('Park Information');
+
 	parks_table.setHeight('70%');
 	parks_table.setTop('18%');
 	parks_table.setOpacity(0.6);	
+	parks_table.setBackgroundImage('images/BlankBtn.png');	
 	
 	win.add(parks_table);
 	
@@ -51,14 +50,12 @@ function createApplicationWindow() {
 		image:'./images/ParksBtn.png',
 		top: '30%',
 		left:'2%'
-
 	});
 	
 	var event_button = Ti.UI.createButton({
 		image:'./images/EventsBtn.png',
 		top: '50%',
 		left:'2%'
-
 	});
 	
 	var activity_button = Ti.UI.createButton({
