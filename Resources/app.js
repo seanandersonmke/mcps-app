@@ -17,10 +17,10 @@ function createParkWindow() {
 	var parks_table = mcps.net.getParkData();
 	
 	// parks_table.set[BackgroundColor, HeaderTitle, Height, Opacity, ]
-	parks_table.setHeaderTitle('Park Information');
+	// parks_table.setHeaderTitle('Park Information');
 	parks_table.setHeight(150);
-	parks_table.setTop(80);
-	parks_table.setOpacity(0.6);	
+	parks_table.setTop('20%');
+	parks_table.setBackgroundImage('images/BlankBtn.png');	
 	
 	win.add(parks_table);
 	
@@ -49,22 +49,22 @@ function createApplicationWindow() {
 	
 	var park_button = Ti.UI.createButton({
 		image:'./images/ParksBtn.png',
-		top: '20%',
-		left: 20
+		top: '25%',
+		left: 10
 
 	});
 	
 	var event_button = Ti.UI.createButton({
 		image:'./images/EventsBtn.png',
-		top: '40%',
-		left: 20
+		top: '45%',
+		left: 10
 
 	});
 	
 	var activity_button = Ti.UI.createButton({
 		image:'./images/ActivitiesBtn.png',
-		top:'60%',
-		left:20
+		top:'65%',
+		left: 10
 	});
 	
 	/* Event Listeners */
