@@ -5,7 +5,7 @@
 function postToFaceBook(){
 
 	var imgView = Ti.UI.createImageView({
-			image:'logo.png',
+			image:'/images/mcps_trans.png',
 			bottom: 25,
 			height: 'auto',
 			width: 'auto'
@@ -34,7 +34,7 @@ exports.createFaceBookButton = function(e){
 		alert('Logged out');
 	});
 
-	return Ti.Facebook.createLoginButton({bottom: '5%'});
+	return Ti.Facebook.createLoginButton();
 };
 
 exports.createFBShareButton = function (e, x) { // x = top value
