@@ -1,52 +1,32 @@
 Logfile initialized
-[INFO] logfile = C:\Users\Gwar Monger\My Documents\Titanium Studio Workspace\mcps-app\build.log
-[DEBUG] C:\Users\Gwar Monger\AppData\Roaming\Titanium\mobilesdk\win32\2.0.1.GA2\android\builder.py simulator Milwaukee Parks C:\Program Files (x86)\Android\android-sdk C:\Users\Gwar Monger\My Documents\Titanium Studio Workspace\mcps-app com.countyparks.mobileapp 7 HVGA
+[INFO] logfile = Z:\users\bcornejo\Titanium Workspace\mcps-app\build.log
+[DEBUG] C:\Users\bcornejo\AppData\Roaming\Titanium\mobilesdk\win32\2.0.1.GA2\android\builder.py simulator Milwaukee Parks C:\Program Files (x86)\Android\android-sdk Z:\users\bcornejo\Titanium Workspace\mcps-app com.countyparks.mobileapp 7 WVGA854
 [INFO] Building Milwaukee Parks for Android ... one moment
 [INFO] Titanium SDK version: 2.0.1 (04/12/12 16:33 999c68a)
 [DEBUG] Waiting for device to be ready ...
-[TRACE] adb devices returned 0 devices/emulators
-[DEBUG] C:\Program Files (x86)\Android\android-sdk\tools\emulator.exe -avd titanium_7_HVGA -port 5560 -sdcard "C:\Users\Gwar Monger\.titanium\titanium_7_HVGA.sdcard" -logcat *:d,* -no-boot-anim -partition-size 128
-[DEBUG] signal caught: 3
-[DEBUG] calling emulator kill on 4164
-[TRACE] adb devices returned 0 devices/emulators
-[TRACE] adb devices returned 0 devices/emulators
 [TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[DEBUG] Device connected... (waited 90 seconds)
-[DEBUG] waited 92.947000 seconds on emulator to get ready
-[INFO] Waiting for the Android Emulator to become available
+[DEBUG] Device connected... (waited 0 seconds)
+[DEBUG] waited 0.121000 seconds on emulator to get ready
 [DEBUG] com.countyparks.mobileapp installed? True
 [INFO] Fastdev server running, deploying in Fastdev mode
 [INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
+[TRACE] COPYING MODIFIED FILE: Z:\users\bcornejo\Titanium Workspace\mcps-app\Resources\app.js => Z:\users\bcornejo\Titanium Workspace\mcps-app\build\android\bin\assets\Resources\app.js
 [INFO] Tiapp.xml unchanged, skipping class generation
 [DEBUG] Processing Android resource drawables
-[DEBUG] found drawable-long-land-hdpi splash screen at C:\Users\Gwar Monger\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-long-land-hdpi\default.png
-[DEBUG] found drawable-long-land-ldpi splash screen at C:\Users\Gwar Monger\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-long-land-ldpi\default.png
-[DEBUG] found drawable-long-port-hdpi splash screen at C:\Users\Gwar Monger\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-long-port-hdpi\default.png
-[DEBUG] found drawable-long-port-ldpi splash screen at C:\Users\Gwar Monger\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-long-port-ldpi\default.png
-[DEBUG] found drawable-notlong-land-hdpi splash screen at C:\Users\Gwar Monger\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-notlong-land-hdpi\default.png
-[DEBUG] found drawable-notlong-land-ldpi splash screen at C:\Users\Gwar Monger\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-notlong-land-ldpi\default.png
-[DEBUG] found drawable-notlong-land-mdpi splash screen at C:\Users\Gwar Monger\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-notlong-land-mdpi\default.png
-[DEBUG] found drawable-notlong-port-hdpi splash screen at C:\Users\Gwar Monger\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-notlong-port-hdpi\default.png
-[DEBUG] found drawable-notlong-port-ldpi splash screen at C:\Users\Gwar Monger\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-notlong-port-ldpi\default.png
-[DEBUG] found drawable-notlong-port-mdpi splash screen at C:\Users\Gwar Monger\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-notlong-port-mdpi\default.png
+[DEBUG] found drawable-long-land-hdpi splash screen at Z:\users\bcornejo\Titanium Workspace\mcps-app\Resources\android\images\res-long-land-hdpi\default.png
+[DEBUG] found drawable-long-land-ldpi splash screen at Z:\users\bcornejo\Titanium Workspace\mcps-app\Resources\android\images\res-long-land-ldpi\default.png
+[DEBUG] found drawable-long-port-hdpi splash screen at Z:\users\bcornejo\Titanium Workspace\mcps-app\Resources\android\images\res-long-port-hdpi\default.png
+[DEBUG] found drawable-long-port-ldpi splash screen at Z:\users\bcornejo\Titanium Workspace\mcps-app\Resources\android\images\res-long-port-ldpi\default.png
+[DEBUG] found drawable-notlong-land-hdpi splash screen at Z:\users\bcornejo\Titanium Workspace\mcps-app\Resources\android\images\res-notlong-land-hdpi\default.png
+[DEBUG] found drawable-notlong-land-ldpi splash screen at Z:\users\bcornejo\Titanium Workspace\mcps-app\Resources\android\images\res-notlong-land-ldpi\default.png
+[DEBUG] found drawable-notlong-land-mdpi splash screen at Z:\users\bcornejo\Titanium Workspace\mcps-app\Resources\android\images\res-notlong-land-mdpi\default.png
+[DEBUG] found drawable-notlong-port-hdpi splash screen at Z:\users\bcornejo\Titanium Workspace\mcps-app\Resources\android\images\res-notlong-port-hdpi\default.png
+[DEBUG] found drawable-notlong-port-ldpi splash screen at Z:\users\bcornejo\Titanium Workspace\mcps-app\Resources\android\images\res-notlong-port-ldpi\default.png
+[DEBUG] found drawable-notlong-port-mdpi splash screen at Z:\users\bcornejo\Titanium Workspace\mcps-app\Resources\android\images\res-notlong-port-mdpi\default.png
 [INFO] Waiting for SDCard to become available..
 [INFO] Re-launching application ... Milwaukee Parks
 [INFO] Launching application ... Milwaukee Parks
 [TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.countyparks.mobileapp/.MilwaukeeParksActivity }
+Warning: Activity not started, its current task has been brought to the front
 

@@ -4,7 +4,6 @@ var mcps = {}; // project namespace
 
 mcps.ui = require('ui'); // import ui namespace
 mcps.net = require('net');
-//mcps.details = require('details');
 mcps.fb = require('fb');
 
 var win = createApplicationWindow();
@@ -19,8 +18,7 @@ function createParkWindow() {
 	parks_table.setHeight('70%');
 	parks_table.setTop('18%');
 	parks_table.setOpacity(0.6);	
-	parks_table.setBackgroundImage('images/BlankBtn.png');	
-	
+
 	win.add(parks_table);
 	
 	return win;
@@ -64,7 +62,6 @@ function createApplicationWindow() {
 		left:'2%'
 	});
 	
-
 	/* Event Listeners */
 	park_button.addEventListener('click', function(e) {
 		var park_window = createParkWindow();
@@ -78,6 +75,7 @@ function createApplicationWindow() {
 	
 	var fb = mcps.fb.createFaceBookButton();
 	fb.setBottom(0); fb.setLeft(0); //layout fb button
+	
 	/* Add everything to the window */
 	win.add(park_button);
 	win.add(event_button);
