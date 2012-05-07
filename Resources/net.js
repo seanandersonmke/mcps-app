@@ -9,7 +9,6 @@ exports.getParkData = function(e) {
 	
 	var xhr = Ti.Network.createHTTPClient({
 		onload: function(e) {
-			
 			json = JSON.parse(this.responseText);
 			for(var i = 0; i < json.length; i++) {
 				var park = json[i];
@@ -26,12 +25,9 @@ exports.getParkData = function(e) {
 					text:park.title,
 					color: '#FFF'
 				});
-				
 				row.add(title);
-				
 				tableData.push(row);
 			}
-			
 			table.setData(tableData);
 		},
 		onerror: function(e) {
