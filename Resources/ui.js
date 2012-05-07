@@ -11,15 +11,15 @@ exports.createBaseWindow = function(winTitle) {
 
 	var logo = Ti.UI.createImageView({
 		image:'./images/mcps_trans.png',
-		bottom:10,
-		height:65,
-		width:158,
+		bottom:0,
+		right:'5%',
+		height:'auto',
+		width:'auto',
 	});
 	var searchBar = createSearchBar();
 	
-	//win.add(logo);
-	//win.add(searchBar);
-	
+	win.add(logo);
+//	win.add(searchBar);
 	return win;
 }
 

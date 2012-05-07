@@ -17,7 +17,10 @@ exports.getParkData = function(e) {
 					height:'60dp',
 					pTitle: park.title,
 					pLink: park.link,
-					pDesc: park.description
+					pDesc: park.description,
+					backgroundImage:'./images/BlankBtn.png',
+					opacity:0.6,
+					layout:'vertical'
 				});
 				var title = Ti.UI.createLabel({
 					text:park.title,
@@ -73,7 +76,9 @@ exports.getEventData = function(e, numdays) {
 					eDesc:evnt.description,
 					eLocation:evnt.location,
 					eDetails:evnt.moredetail,
-					eTime:evnt.time
+					eTime:evnt.time,
+					backgroundImage:'./images/BlankBtn.png',
+					opacity:0.6
 				});
 				var title = Ti.UI.createLabel({
 					text: evnt.description,
@@ -93,7 +98,7 @@ exports.getEventData = function(e, numdays) {
 				var datetime = Ti.UI.createLabel({
 					text: dtf,
 					color: '#FFF',
-					right: 0,
+					left: 260,
 					font: {fontSize: 12}
 				});
 				

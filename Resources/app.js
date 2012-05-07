@@ -15,11 +15,10 @@ function createParkWindow() {
 	/* Creates the top-level park window */
 	var win = mcps.ui.createBaseWindow('Park Info');
 	var parks_table = mcps.net.getParkData();
-	
-	// parks_table.set[BackgroundColor, HeaderTitle, Height, Opacity, ]
-	// parks_table.setHeaderTitle('Park Information');
-	parks_table.setHeight(150);
-	parks_table.setTop('20%');
+
+	parks_table.setHeight('70%');
+	parks_table.setTop('18%');
+	parks_table.setOpacity(0.6);	
 	parks_table.setBackgroundImage('images/BlankBtn.png');	
 	
 	win.add(parks_table);
@@ -33,8 +32,8 @@ function createEventWindow() {
 	var events_table = mcps.net.getEventData();
 	
 	events_table.setHeaderTitle('Event Info');
-	events_table.setHeight(150);
-	events_table.setTop(80);
+	events_table.setHeight('70%');
+	events_table.setTop('18%');
 	events_table.setOpacity(0.6);
 	
 	var optview = 
@@ -49,24 +48,23 @@ function createApplicationWindow() {
 	
 	var park_button = Ti.UI.createButton({
 		image:'./images/ParksBtn.png',
-		top: '25%',
-		left: 10
-
+		top: '30%',
+		left:'2%'
 	});
 	
 	var event_button = Ti.UI.createButton({
 		image:'./images/EventsBtn.png',
-		top: '45%',
-		left: 10
-
+		top: '50%',
+		left:'2%'
 	});
 	
 	var activity_button = Ti.UI.createButton({
 		image:'./images/ActivitiesBtn.png',
-		top:'65%',
-		left: 10
+		top:'70%',
+		left:'2%'
 	});
 	
+
 	/* Event Listeners */
 	park_button.addEventListener('click', function(e) {
 		var park_window = createParkWindow();
@@ -79,12 +77,11 @@ function createApplicationWindow() {
 	});
 	
 	var fb = mcps.fb.createFaceBookButton();
-	
+	fb.setBottom(0); fb.setLeft(0); //layout fb button
 	/* Add everything to the window */
 	win.add(park_button);
 	win.add(event_button);
 	win.add(activity_button);
 	win.add(fb);
-	
 	return win;
 }
