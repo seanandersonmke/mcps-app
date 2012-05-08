@@ -23,10 +23,7 @@ exports.getParkData = function(e) {
 				});
 				var title = Ti.UI.createLabel({
 					text:park.title,
-					textAlign:'center',
-					font:{fontSize:36},
-					top:'35%',
-					color:'#FFF'
+					color: '#FFF'
 				});
 				row.add(title);
 				tableData.push(row);

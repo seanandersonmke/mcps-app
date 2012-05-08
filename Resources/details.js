@@ -5,32 +5,37 @@ mcps.fb = require('fb');
 
 exports.createParkDetailsWindow = function(link, description, title) {
 	
-	var wintitle = "" + title + " Details";
+	var wintitle = "" + title;
 	var win = mcps.ui.createBaseWindow();
 	
 	var label = Ti.UI.createLabel({
-		text: wintitle,
+		text: wintitle + " Details",
 		top: '20%',
 		color: '#FFF',
 		font:{fontSize:24}
 	});
-
-	var button = Ti.UI.createLabel({
-		text: 'View Map',
+	
+	var map = Ti.UI.createWebView({
+		url: link
+	});
+	
+	var button = Ti.UI.createButton({
+		title: 'View Map',
 		top: '35%',
 		color: '#FFF',
 		backgroundColor: '#050',
-		borderWidth: 2,
-		borderRadius: 4,
-		font:{fontSize:16}
+		width: 120,
+		height: 40,
+		borderRadius: 16,
+		font:{fontSize:20}
 	});
 	
 	button.addEventListener('click', function(e){
 		var win1 = Ti.UI.createWindow({title:'Park Map'});
-		//win1.add(image);
+		win1.add(map);
 		win1.open()
 	});
-	
+
 	var desc = Ti.UI.createLabel({
 		text: description,
 		top: '50%',
@@ -41,9 +46,18 @@ exports.createParkDetailsWindow = function(link, description, title) {
 		autoLink: Ti.UI.Android.LINKIFY_ALL
 	});
 	
+	var back = mcps.ui.createBackButton(win);
+	back.setBottom('15%'); back.setLeft('20%');
+	
+	var share = mcps.fb.createShareButton(wintitle);
+	share.setBottom('15%'); share.setRight('20%');
+	
+	
 	win.add(label);
 	win.add(button);
 	win.add(desc);
+	win.add(back);
+	win.add(share);
 
 	return win;
 }

@@ -73,6 +73,10 @@ function createApplicationWindow() {
 		event_window.open();
 	});
 	
+	activity_button.addEventListener('click', function(e) {
+		alert('Coming soon!');
+	});
+	
 	var fb = mcps.fb.createFaceBookButton();
 	fb.setBottom(0); fb.setLeft(0); //layout fb button
 	
