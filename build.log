@@ -6,27 +6,21 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.022000 seconds on emulator to get ready
+[DEBUG] waited 0.023000 seconds on emulator to get ready
 [DEBUG] com.countyparks.mobileapp installed? True
 [INFO] Fastdev server running, deploying in Fastdev mode
 [INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
-[TRACE] COPYING MODIFIED FILE: C:\Users\Marcus\My Documents\Titanium Studio Workspace\mcps-app\Resources\net.js => C:\Users\Marcus\My Documents\Titanium Studio Workspace\mcps-app\build\android\bin\assets\Resources\net.js
+[TRACE] COPYING MODIFIED FILE: C:\Users\Marcus\My Documents\Titanium Studio Workspace\mcps-app\Resources\fb.js => C:\Users\Marcus\My Documents\Titanium Studio Workspace\mcps-app\build\android\bin\assets\Resources\fb.js
 [INFO] Tiapp.xml unchanged, skipping class generation
-[DEBUG] Processing Android resource drawables
-[DEBUG] found drawable-long-land-hdpi splash screen at C:\Users\Marcus\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-long-land-hdpi\default.png
-[DEBUG] found drawable-long-land-ldpi splash screen at C:\Users\Marcus\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-long-land-ldpi\default.png
-[DEBUG] found drawable-long-port-hdpi splash screen at C:\Users\Marcus\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-long-port-hdpi\default.png
-[DEBUG] found drawable-long-port-ldpi splash screen at C:\Users\Marcus\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-long-port-ldpi\default.png
-[DEBUG] found drawable-notlong-land-hdpi splash screen at C:\Users\Marcus\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-notlong-land-hdpi\default.png
-[DEBUG] found drawable-notlong-land-ldpi splash screen at C:\Users\Marcus\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-notlong-land-ldpi\default.png
-[DEBUG] found drawable-notlong-land-mdpi splash screen at C:\Users\Marcus\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-notlong-land-mdpi\default.png
-[DEBUG] found drawable-notlong-port-hdpi splash screen at C:\Users\Marcus\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-notlong-port-hdpi\default.png
-[DEBUG] found drawable-notlong-port-ldpi splash screen at C:\Users\Marcus\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-notlong-port-ldpi\default.png
-[DEBUG] found drawable-notlong-port-mdpi splash screen at C:\Users\Marcus\My Documents\Titanium Studio Workspace\mcps-app\Resources\android\images\res-notlong-port-mdpi\default.png
-[INFO] Waiting for SDCard to become available..
-[INFO] Re-launching application ... Milwaukee Parks
-[INFO] Launching application ... Milwaukee Parks
-[TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.countyparks.mobileapp/.MilwaukeeParksActivity }
-Warning: Activity not started, its current task has been brought to the front
-
+[ERROR] Exception occured while building Android project:
+[ERROR] Traceback (most recent call last):
+[ERROR]   File "C:\Users\Marcus\AppData\Roaming\Titanium\mobilesdk\win32\2.0.1.GA2\android\builder.py", line 2119, in <module>
+[ERROR]     s.build_and_run(False, avd_id, debugger_host=debugger_host)
+[ERROR]   File "C:\Users\Marcus\AppData\Roaming\Titanium\mobilesdk\win32\2.0.1.GA2\android\builder.py", line 1886, in build_and_run
+[ERROR]     self.merge_internal_module_resources()
+[ERROR]   File "C:\Users\Marcus\AppData\Roaming\Titanium\mobilesdk\win32\2.0.1.GA2\android\builder.py", line 1651, in merge_internal_module_resources
+[ERROR]     zip_extractall(res_zip_file, self.project_dir)
+[ERROR]   File "C:\Users\Marcus\AppData\Roaming\Titanium\mobilesdk\win32\2.0.1.GA2\android\builder.py", line 93, in zip_extractall
+[ERROR]     out_file = open(file_path, "wb")
+[ERROR] IOError: [Errno 2] No such file or directory: 'C:\\Users\\Marcus\\My Documents\\Titanium Studio Workspace\\mcps-app\\build\\android\\res\\values\\strings.xml'

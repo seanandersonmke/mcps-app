@@ -82,7 +82,7 @@ function createFbWindow(name){
 		};
 
 		Ti.Facebook.requestWithGraphPath('me/photos', data, 'POST', function(e) { 
-				if(e.success) {alert('FB Post Sucessfull');} 
+				if(e.success) {alert('Post Successful!');} 
 		});
 	});
 	
