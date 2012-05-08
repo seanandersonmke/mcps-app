@@ -25,7 +25,7 @@ exports.getParkData = function(e) {
 					text:park.title,
 					textAlign:'center',
 					font:{fontSize:36},
-					top:'35%',
+					top:'23%',
 					color:'#FFF'
 				});
 				row.add(title);
