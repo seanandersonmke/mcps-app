@@ -20,3 +20,17 @@ exports.createBaseWindow = function(winTitle) {
 	win.add(logo);
 	return win;
 }
+
+exports.createBackButton = function (e, win) {
+	var back = Ti.UI.createButton({
+		title: 'Back',
+		width: 122,
+		height: 50
+	});
+	
+	back.addEventListener('click', function(e) {
+		win.close();
+	});
+	
+	return back;
+}
