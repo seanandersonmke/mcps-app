@@ -13,23 +13,45 @@ exports.getParkData = function(e) {
 			for(var i = 0; i < json.features.length; i++) {
 				var park = json.features[i].attributes;
 				var row = Ti.UI.createTableViewRow({
+<<<<<<< HEAD
 					height:'60dp',
+=======
+					height:'60dp',
+>>>>>>> origin/master
 					pName: park.NAME,
 					pAddr: park.ADDRESS,
 					pLat: parseFloat(park.Lat),
 					pLon: parseFloat(park.Lon),
+<<<<<<< HEAD
 					backgroundImage:'./images/BlankBtn.png',
 					opacity:0.6,
 					layout:'vertical'
+=======
+					backgroundColor: '#050',
+					layout:'vertical',
+					opacity:0.6
 				});
+				var arrow = Ti.UI.createView({
+					image:'/images/Arrow.png',
+					left:'80%'
+					
+>>>>>>> origin/master
+				});
+
 				var title = Ti.UI.createLabel({
+<<<<<<< HEAD
 					text:park.NAME,
+=======
+					text:park.NAME,
+>>>>>>> origin/master
 					textAlign:'center',
 					font:{fontSize:36},
 					top:'23%',
 					color:'#FFF'
 				});
+				
 				row.add(title);
+				row.add(arrow);
 				tableData.push(row);
 			}
 			table.setData(tableData);
@@ -76,17 +98,25 @@ exports.getEventData = function(e, numdays) {
 				var evnt = json[i];
 				var row = Ti.UI.createTableViewRow({
 					height:'60dp',
+					backgroundColor: '#050',
+					layout:'vertical',
+					opacity:0.6,
 					eDesc:evnt.description,
 					eLocation:evnt.location,
 					eDetails:evnt.moredetail,
-					eTime:evnt.time,
-					backgroundImage:'./images/BlankBtn.png',
-					opacity:0.6
+					eTime:evnt.time
+				});
+					
+				var arrow = Ti.UI.createImageView({
+					image:'/images/Arrow.png',
+					left:'80%'
+					
 				});
 				var title = Ti.UI.createLabel({
 					text: evnt.description,
-					color: '#FFF',
-					left: 0
+					font:{fontSize:16},
+					left:0,
+					color:'#FFF'
 				});
 				
 				var dt = evnt.time.split(' ');
@@ -100,12 +130,19 @@ exports.getEventData = function(e, numdays) {
 				
 				var datetime = Ti.UI.createLabel({
 					text: dtf,
+<<<<<<< HEAD
 					color: '#FFF',
 					left: 260,
 					font: {fontSize: 16}
+=======
+					color: '#FFF',
+					right: '5%',
+					font: {fontSize: 24}
+
+>>>>>>> origin/master
 				});
 				
-				
+				row.add(arrow);
 				row.add(title);
 				row.add(datetime);
 				tableData.push(row);

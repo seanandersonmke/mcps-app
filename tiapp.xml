@@ -15,7 +15,7 @@
     <url>http://countyparks.com</url>
     <description>not specified</description>
     <copyright>2012 by br4n</copyright>
-    <icon>mcps_trans_icon.png</icon>
+    <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
     <statusbar-style>default</statusbar-style>
