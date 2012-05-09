@@ -3,20 +3,15 @@ mcps.ui = require('ui');
 mcps.fb = require('fb');
 
 
-exports.createParkDetailsWindow = function(link, description, title) {
-	
-	var wintitle = "" + title;
+exports.createParkDetailsWindow = function(data) {
+
 	var win = mcps.ui.createBaseWindow();
 	
 	var label = Ti.UI.createLabel({
-		text: wintitle + " Details",
+		text: data.name + " Details",
 		top: '3%',
 		color: '#FFF',
 		font:{fontSize:32}
-	});
-	
-	var map = Ti.UI.createWebView({
-		url: link
 	});
 	
 	var button = Ti.UI.createButton({
@@ -32,14 +27,17 @@ exports.createParkDetailsWindow = function(link, description, title) {
 		font:{fontSize:26}
 	});
 	
-	button.addEventListener('click', function(e){
-		var win1 = Ti.UI.createWindow({title:'Park Map'});
-		win1.add(map);
-		win1.open()
+	button.addEventListener('click', function(e) {
+		var mapwin = mcps.ui.createBaseWindow("Map");
+		var map = mcps.ui.createMapView(data);
+		
+		mapwin.add(map);
+		mapwin.open(); 
+	
 	});
 
 	var desc = Ti.UI.createLabel({
-		text: description,
+		text: data.addr,
 		textAlign:'center',
 		height:'auto',
 		color: '#FFF',
@@ -47,7 +45,6 @@ exports.createParkDetailsWindow = function(link, description, title) {
 		zIndex: 3,
 		autoLink: Ti.UI.Android.LINKIFY_ALL
 	});
-	
 	var back_color =Ti.UI.createView({
 		top: '65%',
 		bottom:'5%',
@@ -73,10 +70,11 @@ exports.createParkDetailsWindow = function(link, description, title) {
 		});
 		
 
-	var back = mcps.ui.createBackButton(win);
+	var back = mcps.ui.createBackButton();
 	back.setBottom('14%'); back.setLeft('20%');
+
 	
-	var share = mcps.fb.createShareButton(wintitle);
+	var share = mcps.fb.createShareButton(data.name);
 	share.setBottom('15%'); share.setRight('20%');
 	
 	
@@ -126,7 +124,7 @@ exports.createEventDetailsWindow = function(edesc, eloc, edetail, etime) {
 			zIndex:1,
 			autoLink: Ti.UI.Android.LINKIFY_ALL
 		});
-		
+
 		var back_color =Ti.UI.createView({
 			top: '50%',
 			bottom:'5%',
@@ -148,11 +146,23 @@ exports.createEventDetailsWindow = function(edesc, eloc, edetail, etime) {
 			borderRadius: 8
 		});
 		win.add(large_win);
+			
+		var back = mcps.ui.createBackButton();
+		back.setBottom('15%'); back.setLeft('20%');
+		
+		var share = mcps.fb.createShareButton(edesc);
+		share.setBottom('15%'); share.setRight('20%');
 		
 		large_win.add(label);
 		large_win.add(time);
 		large_win.add(place);
 		back_color.add(desc);
-		large_win.add(back_color);
+		large_win.add(back_color);		
+		
+		win.add(back);
+		win.add(share);
+		win.add(large_win);
+		
+
 		return win;
 }

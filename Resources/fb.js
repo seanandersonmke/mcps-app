@@ -12,11 +12,20 @@ function createFbWindow(name){
 		font: {fontSize: 48}
 	});
 	
+	var view = Ti.UI.createView({
+		height: 200,
+		width: '100%',
+		top: '40%',
+		backgroundColor: "#004A00",
+		opacity: 0.4
+	});
+	
 	var message = Ti.UI.createTextArea({
 		value: msg_txt,
-		top: '34%',
-		width: '70%',
-		height: '18%',
+		//top: '40%',
+		width: '55%',
+		right: 10,
+		height: 150,
 		color: "#000000",
 		backgroundColor: "#FFFFFF",
 		borderColor: "000000",
@@ -33,19 +42,19 @@ function createFbWindow(name){
 		left: '15%'
 	});
 	
-	var view = Ti.UI.createView({
+	var imgback = Ti.UI.createView({
 		height: 150,
-		width: 250,
-		top: '58%'
+		width: 200,
+		left: 2
 	});
 	
 	var image = Ti.UI.createImageView({
 		image: '/images/splash.png',
-		width: 'auto',
-		height: 'auto'
 	});
 	
-	view.add(image);
+	imgback.add(image);
+	view.add(imgback);
+	view.add(message);
 	
 	var post_button = Ti.UI.createButton({
 		title: "Post to Wall",
@@ -99,7 +108,7 @@ function createFbWindow(name){
 	
 	win.add(header);
 	win.add(mhead);
-	win.add(message);
+	//win.add(message);
 	win.add(view);
 	win.add(post_button);
 	win.add(pic_button);
@@ -123,7 +132,7 @@ exports.createFaceBookButton = function(e){
 	return Ti.Facebook.createLoginButton();
 };
 
-exports.createShareButton = function (e, name){ // x = top value
+exports.createShareButton = function (data){
 	var share = Ti.UI.createButton({
 		backgroundImage: '/images/fbshare.png',
 		width: 122,
@@ -131,7 +140,7 @@ exports.createShareButton = function (e, name){ // x = top value
 	});
 	
 	share.addEventListener('click', function(e) {
-		var win = createFbWindow(e, name);
+		var win = createFbWindow(data);
 		win.open();
 	});
 	

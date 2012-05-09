@@ -3,20 +3,21 @@ mcps.details = require('details');
 
 /* Start Parks/Events detail windows */
 exports.getParkData = function(e) {
-	var url = "http://api.milwaukeecounty.org/MobileAPI.svc/RSSInfo/parks";
+	var url = "http://api.milwaukeecounty.org/MobileAPI.svc/ParksInfo";
 	var tableData = [];
 	var table = Ti.UI.createTableView();
 	
 	var xhr = Ti.Network.createHTTPClient({
 		onload: function(e) {
 			json = JSON.parse(this.responseText);
-			for(var i = 0; i < json.length; i++) {
-				var park = json[i];
+			for(var i = 0; i < json.features.length; i++) {
+				var park = json.features[i].attributes;
 				var row = Ti.UI.createTableViewRow({
 					height:'60dp',
-					pTitle: park.title,
-					pLink: park.link,
-					pDesc: park.description,
+					pName: park.NAME,
+					pAddr: park.ADDRESS,
+					pLat: parseFloat(park.Lat),
+					pLon: parseFloat(park.Lon),
 					backgroundColor: '#050',
 					layout:'vertical',
 					opacity:0.6
@@ -26,15 +27,16 @@ exports.getParkData = function(e) {
 					left:'80%'
 					
 				});
-				var parkname = Ti.UI.createLabel({
-					text:park.title,
+
+				var title = Ti.UI.createLabel({
+					text:park.NAME,
 					textAlign:'center',
 					font:{fontSize:36},
 					top:'23%',
 					color:'#FFF'
 				});
 				
-				row.add(parkname);
+				row.add(title);
 				row.add(arrow);
 				tableData.push(row);
 			}
@@ -52,11 +54,14 @@ exports.getParkData = function(e) {
 	
 	table.addEventListener('click', function(e) {
 		if(e.rowData) {
-			var plink = e.rowData.pLink;
-			var pdesc = e.rowData.pDesc;
-			var ptitle = e.rowData.pTitle;
-			var win = mcps.details.createParkDetailsWindow(plink, pdesc, ptitle);
+			var data = {
+				name: e.rowData.pName,
+				addr: e.rowData.pAddr,
+				lat: e.rowData.pLat,
+				lon: e.rowData.pLon
+			};	
 
+			var win = mcps.details.createParkDetailsWindow(data);
 			win.open();
 		}
 	});
@@ -107,13 +112,14 @@ exports.getEventData = function(e, numdays) {
 				var date = d[0] + "/" + d[1];
 				var time = t[0] + ":" + t[1] + " " + dt[2];
 				
-				var dtf = date + "\n" + time;
+				var dtf = date + " " + time;
 				
 				var datetime = Ti.UI.createLabel({
 					text: dtf,
 					color: '#FFF',
 					right: '5%',
 					font: {fontSize: 24}
+
 				});
 				
 				row.add(arrow);
