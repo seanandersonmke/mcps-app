@@ -75,6 +75,8 @@ function createApplicationWindow() {
 	
 	activity_button.addEventListener('click', function(e) {
 		alert('Coming soon!');
+		Ti.Platform.openURL('http://maps.google.com/maps?saddr=&daddr=47,-88');
+
 	});
 	
 	var fb = mcps.fb.createFaceBookButton();
@@ -85,5 +87,6 @@ function createApplicationWindow() {
 	win.add(event_button);
 	win.add(activity_button);
 	win.add(fb);
+	
 	return win;
 }
