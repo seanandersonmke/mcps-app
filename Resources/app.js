@@ -44,25 +44,63 @@ function createApplicationWindow() {
 	
 	var win = mcps.ui.createBaseWindow('Main Window');
 	
-	var park_button = Ti.UI.createButton({
-		image:'./images/ParksBtn.png',
-		top: '30%',
-		left:'2%'
+	var park_button = Ti.UI.createView({
+		backgroundColor: '#050',
+		opacity:0.6,
+		zIndex:0,
+		top: '20%',
+		left:'2%',
+		right:'2%',
+		height:'18%',
+		width:'auto'
+	});
+	var park_button_label = Ti.UI.createLabel({
+		text:'Parks',
+		zIndex:1,
+		color: '#FFF',
+		font:{fontSize:42}
+	});
+		
+	var event_button = Ti.UI.createView({
+		backgroundColor: '#050',
+		opacity:0.6,
+		zIndex:0,
+		top: '40%',
+		left:'2%',
+		right:'2%',
+		height:'18%',
+		width:'auto'
+	});
+	var event_button_label = Ti.UI.createLabel({
+		text:'Events',
+		color: '#FFF',
+		zIndex:1,
+		font:{fontSize:42}
 	});
 	
-	var event_button = Ti.UI.createButton({
-		image:'./images/EventsBtn.png',
-		top: '50%',
-		left:'2%'
+	var activity_button = Ti.UI.createView({
+		backgroundColor: '#050',
+		opacity:0.6,
+		zIndex:0,
+		top: '60%',
+		left:'2%',
+		right:'2%',
+		height:'18%',
+		width:'auto'
 	});
-	
-	var activity_button = Ti.UI.createButton({
-		image:'./images/ActivitiesBtn.png',
-		top:'70%',
-		left:'2%'
+		var activity_button_label = Ti.UI.createLabel({
+		text:'Activities',
+		zIndex:1,
+		color: '#FFF',
+		font:{fontSize:42}
 	});
-	
-	/* Event Listeners */
+	//arrow graphic
+	var arrow = Ti.UI.createImageView({
+					image:'/images/Arrow.png',
+					right:'10%',
+					zIndex:3
+		});
+/* Event Listeners */
 	park_button.addEventListener('click', function(e) {
 		var park_window = createParkWindow();
 		park_window.open();
@@ -82,8 +120,19 @@ function createApplicationWindow() {
 	
 	/* Add everything to the window */
 	win.add(park_button);
+	park_button.add(park_button_label);
+	
 	win.add(event_button);
+	event_button.add(event_button_label);
+	
 	win.add(activity_button);
+	activity_button.add(activity_button_label);
+	
 	win.add(fb);
+	
+	park_button.add(arrow);
+	event_button.add(arrow);
+	activity_button.add(arrow);
+	
 	return win;
 }

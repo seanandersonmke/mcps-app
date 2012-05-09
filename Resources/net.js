@@ -17,18 +17,25 @@ exports.getParkData = function(e) {
 					pTitle: park.title,
 					pLink: park.link,
 					pDesc: park.description,
-					backgroundImage:'./images/BlankBtn.png',
-					opacity:0.6,
-					layout:'vertical'
+					backgroundColor: '#050',
+					layout:'vertical',
+					opacity:0.6
 				});
-				var title = Ti.UI.createLabel({
+				var arrow = Ti.UI.createView({
+					image:'/images/Arrow.png',
+					left:'80%'
+					
+				});
+				var parkname = Ti.UI.createLabel({
 					text:park.title,
 					textAlign:'center',
 					font:{fontSize:36},
 					top:'23%',
 					color:'#FFF'
 				});
-				row.add(title);
+				
+				row.add(parkname);
+				row.add(arrow);
 				tableData.push(row);
 			}
 			table.setData(tableData);
@@ -72,17 +79,25 @@ exports.getEventData = function(e, numdays) {
 				var evnt = json[i];
 				var row = Ti.UI.createTableViewRow({
 					height:'60dp',
+					backgroundColor: '#050',
+					layout:'vertical',
+					opacity:0.6,
 					eDesc:evnt.description,
 					eLocation:evnt.location,
 					eDetails:evnt.moredetail,
-					eTime:evnt.time,
-					backgroundImage:'./images/BlankBtn.png',
-					opacity:0.6
+					eTime:evnt.time
+				});
+					
+				var arrow = Ti.UI.createImageView({
+					image:'/images/Arrow.png',
+					left:'80%'
+					
 				});
 				var title = Ti.UI.createLabel({
 					text: evnt.description,
-					color: '#FFF',
-					left: 0
+					font:{fontSize:16},
+					left:0,
+					color:'#FFF'
 				});
 				
 				var dt = evnt.time.split(' ');
@@ -97,11 +112,11 @@ exports.getEventData = function(e, numdays) {
 				var datetime = Ti.UI.createLabel({
 					text: dtf,
 					color: '#FFF',
-					left: 260,
-					font: {fontSize: 12}
+					right: '5%',
+					font: {fontSize: 24}
 				});
 				
-				
+				row.add(arrow);
 				row.add(title);
 				row.add(datetime);
 				tableData.push(row);
