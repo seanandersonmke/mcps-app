@@ -29,7 +29,7 @@ function createEventWindow() {
 	var win = mcps.ui.createBaseWindow('Event Info');
 	var events_table = mcps.net.getEventData();
 	
-	events_table.setHeaderTitle('Event Info');
+//	events_table.setHeaderTitle('Event Info');
 	events_table.setHeight('70%');
 	events_table.setTop('18%');
 	events_table.setOpacity(0.6);
@@ -89,7 +89,7 @@ function createApplicationWindow() {
 		width:'auto'
 	});
 		var activity_button_label = Ti.UI.createLabel({
-		text:'Activities',
+		text:'Sue\'s Picks',
 		zIndex:1,
 		color: '#FFF',
 		font:{fontSize:42}
@@ -133,9 +133,9 @@ function createApplicationWindow() {
 	win.add(fb);
 	
 
-	park_button.add(arrow);
-	event_button.add(arrow);
-	activity_button.add(arrow);
+//	park_button.add(arrow);
+//	event_button.add(arrow);
+//	activity_button.add(arrow);
 	
 	return win;
 }
